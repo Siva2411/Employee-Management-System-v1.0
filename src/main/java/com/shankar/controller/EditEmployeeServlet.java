@@ -7,18 +7,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+
+@WebServlet("/EditEmployeeServlet")
+public class EditEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-    public LoginServlet() {
+   
+    public EditEmployeeServlet() {
         super();
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		doGet(request, response);
 	}
 
 }
