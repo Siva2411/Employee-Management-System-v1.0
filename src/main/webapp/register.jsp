@@ -1,30 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-     <!-- Font Awesome -->
-     <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-   />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/register.css" />
+    <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
     <div
       class="register-container d-flex justify-content-center align-items-center min-vh-100"
     >
       <div class="register-card p-4">
-        <h2 class="text-center mb-4">Login</h2>
-        <form id="loginForm" novalidate>
+        <h2 class="text-center mb-4">Register</h2>
+        <form id="registerForm" novalidate>
           <div class="mb-3 form-group">
             <input
               type="text"
@@ -34,6 +36,16 @@
               required
             />
             <div class="invalid-feedback">Username must start with a capital letter, be 6-10 characters long, and only contain alphanumeric characters.</div>
+          </div>
+          <div class="mb-3 form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="E-mail"
+              id="email"
+              required
+            />
+            <div class="invalid-feedback">Please enter a valid email address.</div>
           </div>
           <div class="mb-3 position-relative form-group">
             <input
@@ -64,31 +76,16 @@
             <div class="invalid-feedback">Passwords do not match.</div>
           </div>
           <button type="submit" class="btn btn-primary w-100 mb-2">
-            Login
+            Register
           </button>
-          <a href="./register.html" class="text-center d-block have-account"
-            >Have no account? Sign up</a
+          <a href="./login.html" class="text-center d-block have-account"
+            >Have an account? Sign In</a
           >
         </form>
       </div>
     </div>
-    <script>
-      // Password toggle functionality
-      document.getElementById("togglePassword").addEventListener("click", function () {
-          const passwordField = document.getElementById("password");
-          const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-          passwordField.setAttribute("type", type);
-          this.classList.toggle("fa-eye-slash"); // Toggle icon
-      });
-
-      document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
-          const confirmPasswordField = document.getElementById("confirmPassword");
-          const type = confirmPasswordField.getAttribute("type") === "password" ? "text" : "password";
-          confirmPasswordField.setAttribute("type", type);
-          this.classList.toggle("fa-eye-slash"); // Toggle icon
-      });
-    </script>
-    <script src="./js/validateLogin.js"></script>
+    <script src="./js/validateRegister.js"></script>
+    <!-- Bootstrap JS (Optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
